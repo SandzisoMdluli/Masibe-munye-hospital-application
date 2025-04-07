@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Masibe Munye - Care at Your Fingertips</title>
+    <style>
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }0 
+
+        body {
+            line-height: 1.6;
+            color: #333;
+        }
+
+        /* Header & Navigation */
+        .header {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+                        url('https://via.placeholder.com/1600x800') no-repeat center center/cover;
+            color: white;
+            text-align: center;
+            padding: 2rem 1rem 4rem;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            color: #4CAF50;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin-left: 2rem;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #4CAF50;
+        }
+
+        .hero {
+            margin-top: 3rem;
+        }
+
+        .hero h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Sections */
+        section {
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        section h2 {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            color: #4CAF50;
+        }
+
+        /* About Section */
+        .about p {
+            max-width: 800px;
+            margin: 0 auto 2rem;
+        }
+
+        .care-image {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Services Section */
+        .services {
+            background-color: #f9f9f9;
+        }
+
+        .service-cards {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .card {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            padding: 2rem;
+            width: 300px;
+            transition: transform 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+        }
+
+        .card h3 {
+            color: #4CAF50;
+            margin-bottom: 1rem;
+        }
+
+        /* Contact Section */
+        .contact form {
+            max-width: 600px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .contact input, 
+        .contact textarea {
+            padding: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            width: 100%;
+        }
+
+        .contact textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        .contact button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 1rem;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+
+        .contact button:hover {
+            background-color: #388E3C;
+        }
+
+        /* Feedback Message */
+        .feedback {
+            margin-top: 1rem;
+            padding: 1rem;
+            border-radius: 4px;
+            display: none;
+        }
+
+        .feedback.success {
+            background-color: #DFF2BF;
+            color: #4F8A10;
+            border: 1px solid #4F8A10;
+        }
+
+        .feedback.error {
+            background-color: #FFBABA;
+            color: #D8000C;
+            border: 1px solid #D8000C;
+        }
+
+        /* Newsletter Section */
+        .newsletter {
+            background-color: #e9f5ea;
+            padding: 3rem 2rem;
+        }
+
+        .newsletter-form {
+            display: flex;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .newsletter-form input {
+            flex: 1;
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 4px 0 0 4px;
+        }
+
+        .newsletter-form button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 0 1.5rem;
+            border-radius: 0 4px 4px 0;
+            cursor: pointer;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .nav-links {
+                margin-top: 1rem;
+            }
+            
+            .service-cards {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .newsletter-form {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .newsletter-form input,
+            .newsletter-form button {
+                width: 100%;
+                border-radius: 4px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="header">
+        <nav class="navbar">
+            <h1 class="logo">Masibe Munye</h1>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="hero" id="home">
+            <h2>Care at Your Fingertips</h2>
+            <p>Connecting hospitals and clinics for better healthcare</p>
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <h2>About Us</h2>
+        <p>Masibe Munye is revolutionizing healthcare by providing a mobile platform that connects hospitals, clinics, and medical services, making care accessible to everyone.</p>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <h2>Our Services</h2>
+        <div class="service-cards">
+            <div class="card">
+                <h3>24/7 Consultation</h3>
+                <p>Access medical consultations from your phone, anytime, anywhere.</p>
+            </div>
+            <div class="card">
+                <h3>Mobile Pharmacy</h3>
+                <p>Order prescriptions directly through the app and get them delivered to your location.</p>
+            </div>
+            <div class="card">
+                <h3>Emergency Response</h3>
+                <p>Get connected with emergency medical services in real-time.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter">
+        <h2>Subscribe to Our Newsletter</h2>
+        <p>Stay updated with the latest health tips and service updates</p>
+        <form id="newsletter-form" class="newsletter-form">
+            <input type="email" id="newsletter-email" placeholder="Your Email Address" required>
+            <button type="submit">Subscribe</button>
+        </form>
+        <div id="newsletter-feedback" class="feedback"></div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <h2>Contact Us</h2>
+        <p>If you have any questions or need support, reach out to us!</p>
+        <form id="contact-form">
+            <input type="text" id="name" placeholder="Your Name" required>
+            <input type="email" id="email" placeholder="Your Email" required>
+            <input type="tel" id="phone" placeholder="Your Phone Number">
+            <select id="subject">
+                <option value="">Select Subject</option>
+                <option value="general">General Inquiry</option>
+                <option value="support">Technical Support</option>
+                <option value="partnership">Partnership Opportunities</option>
+                <option value="other">Other</option>
+            </select>
+            <textarea id="message" placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+        <div id="contact-feedback" class="feedback"></div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Masibe Munye Mobile Hospital. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        // Contact Form Handling
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const subject = document.getElementById('subject').value;
+            const message = document.getElementById('message').value;
+            
+            // Normally you would send this data to a server
+            console.log('Form submitted:', { name, email, phone, subject, message });
+            
+            // Show feedback
+            const feedbackElement = document.getElementById('contact-feedback');
+            feedbackElement.textContent = `Thank you, ${name}! Your message has been received. We'll get back to you shortly.`;
+            feedbackElement.className = 'feedback success';
+            feedbackElement.style.display = 'block';
+            
+            // Reset form
+            document.getElementById('contact-form').reset();
+            
+            // Hide feedback after 5 seconds
+            setTimeout(() => {
+                feedbackElement.style.display = 'none';
+            }, 5000);
+        });
+        
+        // Newsletter Form Handling
+        document.getElementById('newsletter-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const email = document.getElementById('newsletter-email').value;
+            
+            // Validate email (simple check)
+            if (!email.includes('@')) {
+                const feedbackElement = document.getElementById('newsletter-feedback');
+                feedbackElement.textContent = 'Please enter a valid email address.';
+                feedbackElement.className = 'feedback error';
+                feedbackElement.style.display = 'block';
+                return;
+            }
+            
+            // Normally you would send this data to a server
+            console.log('Newsletter subscription:', email);
+            
+            // Show success feedback
+            const feedbackElement = document.getElementById('newsletter-feedback');
+            feedbackElement.textContent = 'Thank you for subscribing to our newsletter!';
+            feedbackElement.className = 'feedback success';
+            feedbackElement.style.display = 'block';
+            
+            // Reset form
+            document.getElementById('newsletter-form').reset();
+            
+            // Hide feedback after 5 seconds
+            setTimeout(() => {
+                feedbackElement.style.display = 'none';
+            }, 5000);
+        });
+    </script>
+</body>
+</html>
